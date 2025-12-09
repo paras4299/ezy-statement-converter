@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Ezy Statement Converter{% endblock %}
+
+{% block extra_css %}
+<style>
+    .about-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        padding: 3rem 2rem;
+        text-align: center;
+    }
+
+    .about-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-content {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+    }
+
+    .about-section {
+        margin-bottom: 3rem;
+    }
+
+    .about-section h2 {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .about-section p {
+        color: var(--text-light);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+    }
+
+    .stat-card {
+        text-align: center;
+        padding: 2rem;
+        background: var(--bg-light);
+        border-radius: 1rem;
+    }
+
+    .stat-card h3 {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-card p {
+        color: var(--text-light);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="about-hero">
+    <h1>About Ezy Statement Converter</h1>
+    <p>Making financial data management easier for everyone</p>
+</section>
+
+<div class="about-content">
+    <div class="about-section">
+        <h2>Our Mission</h2>
+        <p>
+            We believe that managing financial data should be simple and accessible to everyone. 
+            Ezy Statement Converter was created to help individuals and businesses convert their bank statement 
+            PDFs into organized Excel spreadsheets quickly and securely.
+        </p>
+        <p>
+            Our mission is to save you time and effort by automating the tedious process of manually 
+            entering transaction data from PDF statements into spreadsheets.
+        </p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>10K+</h3>
+            <p>Statements Converted</p>
+        </div>
+        <div class="stat-card">
+            <h3>3</h3>
+            <p>Banks Supported</p>
+        </div>
+        <div class="stat-card">
+            <h3>99.9%</h3>
+            <p>Accuracy Rate</p>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <h2>How It Works</h2>
+        <p>
+            Our advanced PDF parsing technology extracts transaction data from your bank statements 
+            with high accuracy. We support multiple bank formats including HDFC Bank, State Bank of 
+            India, and Axis Bank.
+        </p>
+        <p>
+            Simply upload your PDF statement, select your bank, and let our system do the rest. 
+            Within seconds, you'll have a clean, organized Excel file ready for download.
+        </p>
+    </div>
+
+    <div class="about-section">
+        <h2>Security & Privacy</h2>
+        <p>
+            We take your privacy seriously. All uploaded files are processed securely and are 
+            automatically deleted from our servers immediately after conversion. We never store 
+            or share your financial data.
+        </p>
+        <p>
+            Your data is encrypted during transmission and processing, ensuring complete security 
+            throughout the conversion process.
+        </p>
+    </div>
+
+    <div class="about-section">
+        <h2>Why Choose Us?</h2>
+        <p>
+            <strong>Fast:</strong> Convert statements in seconds, not hours.<br>
+            <strong>Accurate:</strong> Advanced algorithms ensure precise data extraction.<br>
+            <strong>Secure:</strong> Your data is protected with enterprise-grade security.<br>
+            <strong>Free:</strong> No hidden costs or subscription fees.<br>
+            <strong>Easy:</strong> Simple interface that anyone can use.
+        </p>
+    </div>
+</div>
+{% endblock %}

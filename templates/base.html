@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Online Bank Statement Converter - Convert PDF bank statements to Excel instantly. Support for HDFC, SBI, Axis, ICICI, Kotak, PNB, Union Bank. Secure, fast & accurate. No registration required.">
+    <meta name="keywords" content="bank statement converter, convert bank statement to excel, PDF to Excel converter, bank statement PDF to Excel, HDFC statement converter, SBI statement converter, Axis Bank converter, ICICI statement converter, Kotak statement converter, PNB statement converter, Union Bank converter, free bank statement converter, online statement converter, bank transaction converter, financial statement converter">
+    <meta name="author" content="Ezy Statement Converter">
+    <meta property="og:title" content="Free Bank Statement PDF to Excel Converter - Ezy Converter">
+    <meta property="og:description" content="Convert bank statement PDFs to Excel instantly. Free, secure & accurate. Support for all major Indian banks. No registration required.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ezystatementconverter.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Bank Statement PDF to Excel Converter">
+    <meta name="twitter:description" content="Convert bank statements to Excel instantly. Free, secure & accurate.">
+    <title>{% block title %}Free Bank Statement PDF to Excel Converter - Ezy Converter{% endblock %}</title>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Ezy Statement Converter",
+        "description": "Free online tool to convert bank statement PDFs to Excel format",
+        "url": "https://ezystatementconverter.com",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Convert PDF bank statements to Excel",
+            "Support for HDFC, SBI, Axis, ICICI, Kotak, PNB, Union Bank",
+            "Secure file processing",
+            "Instant conversion",
+            "No registration required"
+        ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Cpath d='M25 35 L45 35 L45 65 L25 65 Z M55 25 L75 25 L75 65 L55 65 Z' fill='white'/%3E%3Cpath d='M30 45 L40 45 M60 35 L70 35 M60 45 L70 45 M60 55 L70 55' stroke='%23667eea' stroke-width='2'/%3E%3C/svg%3E">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Translation Script -->
+    <script src="/static/js/translations.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4F46E5;
+            --primary-dark: #4338CA;
+            --secondary-color: #10B981;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+            --border-color: #E5E7EB;
+            --success-color: #10B981;
+            --error-color: #EF4444;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #fff;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
+        }
+
+        .logo-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-text .main {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-text .sub {
+            font-size: 0.65rem;
+            color: var(--text-light);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+        }
+
+        .nav-links a i {
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-links a:hover i {
+            transform: scale(1.1);
+        }
+
+        .nav-links .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 0.6rem 1.5rem;
+            border-radius: 2rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-links .btn-primary:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .nav-links .btn-primary i {
+            animation: rotate 2s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .nav-links .btn-primary:hover i {
+            animation-play-state: paused;
+        }
+
+        .language-selector select {
+            padding: 0.5rem 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            background: #fff;
+            color: var(--text-dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .language-selector select:hover {
+            border-color: var(--primary-color);
+        }
+
+        .language-selector select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: #fff;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section h3 i {
+            font-size: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #D1D5DB;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .footer-section a i {
+            font-size: 0.9rem;
+            transition: transform 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+            padding-left: 0.5rem;
+        }
+
+        .footer-section a:hover i {
+            transform: translateX(3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9CA3AF;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .logo-text .main {
+                font-size: 1.1rem;
+            }
+
+            .logo-text .sub {
+                font-size: 0.55rem;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .logo-icon i {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="main">Ezy Converter</span>
+                    <span class="sub">Bank Statements</span>
+                </div>
+            </a>
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/"><i class="fas fa-home"></i> <span data-i18n="nav.home">Home</span></a></li>
+                <li><a href="/about"><i class="fas fa-info-circle"></i> <span data-i18n="nav.about">About</span></a></li>
+                <li><a href="/contact"><i class="fas fa-envelope"></i> <span data-i18n="nav.contact">Contact</span></a></li>
+                <li class="language-selector">
+                    <select id="languageSelect" onchange="i18n.changeLanguage(this.value)">
+                        <option value="en">🇬🇧 English</option>
+                        <option value="zh">🇨🇳 中文</option>
+                        <option value="ja">🇯🇵 日本語</option>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="it">🇮🇹 Italiano</option>
+                    </select>
+                </li>
+                <li><a href="#converter" class="btn-primary" onclick="scrollToConverter(event)"><i class="fas fa-sync-alt"></i> <span data-i18n="nav.convertNow">Convert Now</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ezy Statement Converter</h3>
+                <p data-i18n="footer.description">Convert your bank statement PDFs to Excel format instantly. Free, secure, and easy to use.</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-university"></i> <span data-i18n="footer.supportedBanks">Supported Banks</span></h3>
+                <a href="#"><i class="fas fa-chevron-right"></i> HDFC Bank</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> State Bank of India</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Axis Bank</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> ICICI Bank</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Kotak Mahindra Bank</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Punjab National Bank</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Union Bank of India</a>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> <span data-i18n="footer.quickLinks">Quick Links</span></h3>
+                <a href="/"><i class="fas fa-home"></i> <span data-i18n="nav.home">Home</span></a>
+                <a href="/about"><i class="fas fa-info-circle"></i> <span data-i18n="nav.about">About</span></a>
+                <a href="/contact"><i class="fas fa-envelope"></i> <span data-i18n="nav.contact">Contact</span></a>
+                <a href="/privacy"><i class="fas fa-shield-alt"></i> <span data-i18n="footer.privacy">Privacy Policy</span></a>
+                <a href="/terms"><i class="fas fa-file-contract"></i> <span data-i18n="footer.terms">Terms & Conditions</span></a>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-balance-scale"></i> <span data-i18n="footer.legal">Legal</span></h3>
+                <a href="/privacy"><i class="fas fa-user-shield"></i> <span data-i18n="footer.privacy">Privacy Policy</span></a>
+                <a href="/terms"><i class="fas fa-gavel"></i> <span data-i18n="footer.terms">Terms & Conditions</span></a>
+                <a href="#"><i class="fas fa-lock"></i> <span data-i18n="footer.security">Security</span></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span data-i18n="footer.copyright">2025 Ezy Statement Converter. All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll to converter function
+        function scrollToConverter(event) {
+            event.preventDefault();
+            const converter = document.getElementById('converter');
+            if (converter) {
+                converter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Translation system is now loaded from /static/js/translations.js
+    </script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "contact": "联系",
+    "convertNow": "立即转换"
+  },
+  "hero": {
+    "title": "转换银行对账单",
+    "titleHighlight": "PDF转Excel",
+    "subtitle": "免费在线银行对账单转换器 - 即时将PDF对账单转换为Excel电子表格。安全、快速、准确。",
+    "badge1": "100%安全",
+    "badge2": "即时转换",
+    "badge3": "无需注册",
+    "badge4": "永久免费"
+  },
+  "form": {
+    "selectBank": "选择您的银行",
+    "searchBank": "搜索银行...",
+    "chooseBank": "选择银行...",
+    "uploadPDF": "上传PDF对账单",
+    "dragDrop": "拖放您的PDF文件到这里",
+    "orClick": "或点击浏览（最大16MB）",
+    "password": "PDF密码（可选）",
+    "passwordPlaceholder": "如果没有密码保护请留空",
+    "convertButton": "转换为Excel",
+    "converting": "正在转换您的对账单...",
+    "successMessage": "转换成功！",
+    "downloadButton": "下载Excel文件"
+  },
+  "features": {
+    "title": "为什么选择Ezy对账单转换器？",
+    "feature1Title": "闪电般快速转换",
+    "feature1Desc": "几秒钟内将银行对账单转换为Excel。无需等待，无延迟 - 每次都能获得即时结果",
+    "feature2Title": "银行级安全",
+    "feature2Desc": "SSL加密上传。转换后自动删除文件。您的财务数据保持私密",
+    "feature3Title": "100%准确数据",
+    "feature3Desc": "先进的OCR和解析技术精确提取每笔交易",
+    "feature4Title": "任何设备，随时随地",
+    "feature4Desc": "适用于桌面、平板和移动设备。随时随地转换对账单",
+    "feature5Title": "Excel就绪格式",
+    "feature5Desc": "获得完美格式化的Excel文件，日期、金额和描述井然有序",
+    "feature6Title": "无限转换",
+    "feature6Desc": "无限制，无订阅。完全免费转换任意数量的对账单"
+  },
+  "howItWorks": {
+    "title": "3个简单步骤将银行对账单PDF转换为Excel",
+    "step1Title": "选择您的银行",
+    "step1Desc": "从HDFC、SBI、Axis、ICICI、Kotak、PNB、Union Bank等中选择",
+    "step2Title": "上传PDF对账单",
+    "step2Desc": "拖放您的银行对账单PDF或点击浏览。支持密码保护文件",
+    "step3Title": "下载Excel文件",
+    "step3Desc": "获取包含所有交易、日期和金额的有序Excel电子表格"
+  },
+  "banks": {
+    "title": "支持的银行",
+    "hdfc": "HDFC银行",
+    "sbi": "印度国家银行",
+    "axis": "Axis银行",
+    "icici": "ICICI银行",
+    "kotak": "Kotak Mahindra银行",
+    "pnb": "旁遮普国家银行",
+    "union": "印度联合银行"
+  },
+  "seo": {
+    "title": "关于银行对账单PDF转Excel转换器",
+    "intro": "Ezy对账单转换器是一个免费的在线工具，旨在帮助您快速安全地将银行对账单PDF转换为Excel格式。无论您是管理个人财务、准备税务文件还是分析业务交易，我们的转换器都能轻松从PDF银行对账单中提取数据并在Excel电子表格中组织。",
+    "whyTitle": "为什么要将银行对账单转换为Excel？",
+    "whyIntro": "将银行对账单从PDF格式转换为Excel格式具有众多优势：",
+    "benefit1": "轻松分析：在Excel中排序、筛选和分析交易",
+    "benefit2": "税务准备：快速分类费用以进行税务申报",
+    "benefit3": "预算跟踪：将数据导入预算工具和应用程序",
+    "benefit4": "财务规划：从交易数据创建图表和报告",
+    "benefit5": "记录保存：维护所有交易的有序数字记录",
+    "supportedTitle": "支持的印度银行",
+    "supportedDesc": "我们的转换器支持所有主要的印度银行，包括HDFC银行、印度国家银行(SBI)、Axis银行、ICICI银行、Kotak Mahindra银行、旁遮普国家银行(PNB)和印度联合银行。我们不断增加对更多银行的支持以更好地为您服务。",
+    "securityTitle": "100%免费且安全",
+    "securityDesc": "与其他转换器不同，Ezy对账单转换器完全免费，没有隐藏费用、订阅或转换限制。您的财务数据通过SSL加密安全处理，所有文件在转换后自动删除以保护您的隐私。"
+  },
+  "footer": {
+    "description": "即时将您的银行对账单PDF转换为Excel格式。免费、安全、易用。",
+    "supportedBanks": "支持的银行",
+    "quickLinks": "快速链接",
+    "legal": "法律",
+    "privacy": "隐私政策",
+    "terms": "条款和条件",
+    "security": "安全",
+    "copyright": "2025 Ezy对账单转换器。保留所有权利。"
+  },
+  "about": {
+    "title": "关于Ezy对账单转换器",
+    "subtitle": "让每个人的财务数据管理更轻松"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "与我们取得联系"
+  }
+}

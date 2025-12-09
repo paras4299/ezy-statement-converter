@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "概要",
+    "contact": "お問い合わせ",
+    "convertNow": "今すぐ変換"
+  },
+  "hero": {
+    "title": "銀行明細書を変換",
+    "titleHighlight": "PDFからExcelへ",
+    "subtitle": "無料オンライン銀行明細書コンバーター - PDF明細書を即座にExcelスプレッドシートに変換。安全、高速、正確。",
+    "badge1": "100%安全",
+    "badge2": "即座に変換",
+    "badge3": "登録不要",
+    "badge4": "永久無料"
+  },
+  "form": {
+    "selectBank": "銀行を選択",
+    "searchBank": "銀行を検索...",
+    "chooseBank": "銀行を選択...",
+    "uploadPDF": "PDF明細書をアップロード",
+    "dragDrop": "PDFをここにドラッグ＆ドロップ",
+    "orClick": "またはクリックして参照（最大16MB）",
+    "password": "PDFパスワード（オプション）",
+    "passwordPlaceholder": "パスワード保護されていない場合は空のままにしてください",
+    "convertButton": "Excelに変換",
+    "converting": "明細書を変換中...",
+    "successMessage": "変換成功！",
+    "downloadButton": "Excelファイルをダウンロード"
+  },
+  "features": {
+    "title": "Ezy明細書コンバーターを選ぶ理由",
+    "feature1Title": "超高速変換",
+    "feature1Desc": "数秒で銀行明細書をExcelに変換。待ち時間なし、遅延なし - 毎回即座に結果を取得",
+    "feature2Title": "銀行レベルのセキュリティ",
+    "feature2Desc": "SSL暗号化アップロード。変換後にファイルを自動削除。財務データは非公開のまま",
+    "feature3Title": "100%正確なデータ",
+    "feature3Desc": "高度なOCRおよび解析技術により、すべての取引を正確に抽出",
+    "feature4Title": "どのデバイスでも、どこでも",
+    "feature4Desc": "デスクトップ、タブレット、モバイルで動作。外出先で明細書を変換",
+    "feature5Title": "Excel対応形式",
+    "feature5Desc": "日付、金額、説明が整理された完璧にフォーマットされたExcelファイルを取得",
+    "feature6Title": "無制限の変換",
+    "feature6Desc": "制限なし、サブスクリプションなし。必要なだけ明細書を完全無料で変換"
+  },
+  "howItWorks": {
+    "title": "3つの簡単なステップで銀行明細書PDFをExcelに変換",
+    "step1Title": "銀行を選択",
+    "step1Desc": "HDFC、SBI、Axis、ICICI、Kotak、PNB、Union Bankなどから選択",
+    "step2Title": "PDF明細書をアップロード",
+    "step2Desc": "銀行明細書PDFをドラッグ＆ドロップまたはクリックして参照。パスワード保護ファイルをサポート",
+    "step3Title": "Excelファイルをダウンロード",
+    "step3Desc": "すべての取引、日付、金額を含む整理されたExcelスプレッドシートを取得"
+  },
+  "banks": {
+    "title": "対応銀行",
+    "hdfc": "HDFC銀行",
+    "sbi": "インド国立銀行",
+    "axis": "Axis銀行",
+    "icici": "ICICI銀行",
+    "kotak": "Kotak Mahindra銀行",
+    "pnb": "パンジャブ国立銀行",
+    "union": "インド連合銀行"
+  },
+  "seo": {
+    "title": "銀行明細書PDFからExcelコンバーターについて",
+    "intro": "Ezy明細書コンバーターは、銀行明細書PDFをExcel形式に迅速かつ安全に変換するのに役立つ無料のオンラインツールです。個人の財務管理、税務書類の準備、ビジネス取引の分析など、当社のコンバーターを使用すると、PDF銀行明細書からデータを簡単に抽出し、Excelスプレッドシートで整理できます。",
+    "whyTitle": "銀行明細書をExcelに変換する理由",
+    "whyIntro": "銀行明細書をPDF形式からExcel形式に変換すると、多くの利点があります：",
+    "benefit1": "簡単な分析：Excelで取引を並べ替え、フィルタリング、分析",
+    "benefit2": "税務準備：税務申告のために経費を迅速に分類",
+    "benefit3": "予算追跡：予算ツールやアプリにデータをインポート",
+    "benefit4": "財務計画：取引データからチャートやレポートを作成",
+    "benefit5": "記録保持：すべての取引の整理されたデジタル記録を維持",
+    "supportedTitle": "対応インド銀行",
+    "supportedDesc": "当社のコンバーターは、HDFC銀行、インド国立銀行（SBI）、Axis銀行、ICICI銀行、Kotak Mahindra銀行、パンジャブ国立銀行（PNB）、インド連合銀行を含むすべての主要なインド銀行をサポートしています。より良いサービスを提供するために、より多くの銀行のサポートを継続的に追加しています。",
+    "securityTitle": "100%無料＆安全",
+    "securityDesc": "他のコンバーターとは異なり、Ezy明細書コンバーターは完全に無料で、隠れた料金、サブスクリプション、変換制限はありません。財務データはSSL暗号化で安全に処理され、すべてのファイルは変換後に自動的に削除されてプライバシーを保護します。"
+  },
+  "footer": {
+    "description": "銀行明細書PDFを即座にExcel形式に変換。無料、安全、簡単。",
+    "supportedBanks": "対応銀行",
+    "quickLinks": "クイックリンク",
+    "legal": "法的情報",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "security": "セキュリティ",
+    "copyright": "2025 Ezy明細書コンバーター。全著作権所有。"
+  },
+  "about": {
+    "title": "Ezy明細書コンバーターについて",
+    "subtitle": "すべての人の財務データ管理を簡単に"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "お気軽にお問い合わせください"
+  }
+}

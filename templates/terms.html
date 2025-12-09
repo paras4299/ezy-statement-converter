@@ -1,0 +1,289 @@
+{% extends "base.html" %}
+
+{% block title %}Terms & Conditions - Ezy Statement Converter{% endblock %}
+
+{% block extra_css %}
+<style>
+    .terms-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+    }
+
+    .terms-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .terms-header h1 {
+        font-size: 2.5rem;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+
+    .terms-header p {
+        color: var(--text-light);
+        font-size: 1rem;
+    }
+
+    .terms-content {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: var(--shadow);
+    }
+
+    .terms-content h2 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .terms-content h2:first-child {
+        margin-top: 0;
+    }
+
+    .terms-content h3 {
+        color: var(--text-dark);
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .terms-content p {
+        color: var(--text-light);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+    }
+
+    .terms-content ul {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .terms-content li {
+        color: var(--text-light);
+        line-height: 1.8;
+        margin-bottom: 0.5rem;
+    }
+
+    .terms-content strong {
+        color: var(--text-dark);
+    }
+
+    .last-updated {
+        background: var(--bg-light);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: var(--text-light);
+    }
+
+    .important-notice {
+        background: #FEF3C7;
+        border-left: 4px solid #F59E0B;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+    }
+
+    .important-notice p {
+        color: #92400E;
+        margin: 0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="terms-container">
+    <div class="terms-header">
+        <h1>Terms & Conditions</h1>
+        <p>Please read these terms carefully before using our service</p>
+    </div>
+
+    <div class="terms-content">
+        <div class="last-updated">
+            <strong>Last Updated:</strong> December 9, 2024
+        </div>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing and using Ezy Statement Converter ("the Service"), you accept and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our Service.</p>
+
+        <h2>2. Description of Service</h2>
+        <p>Ezy Statement Converter provides a free online tool to convert bank statement PDF files into Excel format. We currently support the following banks:</p>
+        <ul>
+            <li>HDFC Bank</li>
+            <li>State Bank of India (SBI)</li>
+            <li>Axis Bank</li>
+            <li>ICICI Bank</li>
+            <li>Kotak Mahindra Bank</li>
+            <li>Punjab National Bank (PNB)</li>
+            <li>Union Bank of India</li>
+        </ul>
+
+        <h2>3. User Responsibilities</h2>
+        
+        <h3>3.1 Lawful Use</h3>
+        <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You must not:</p>
+        <ul>
+            <li>Upload files that contain viruses, malware, or malicious code</li>
+            <li>Attempt to gain unauthorized access to our systems</li>
+            <li>Use the Service to process fraudulent or stolen documents</li>
+            <li>Violate any applicable laws or regulations</li>
+            <li>Interfere with or disrupt the Service or servers</li>
+        </ul>
+
+        <h3>3.2 File Ownership</h3>
+        <p>You represent and warrant that:</p>
+        <ul>
+            <li>You own or have the right to upload and convert the files you submit</li>
+            <li>The files do not violate any third-party rights</li>
+            <li>You are authorized to access and process the bank statements you upload</li>
+        </ul>
+
+        <h2>4. Service Limitations</h2>
+        
+        <div class="important-notice">
+            <p><strong>Important:</strong> This service is provided "as is" without warranties of any kind.</p>
+        </div>
+
+        <h3>4.1 Accuracy</h3>
+        <p>While we strive for accuracy, we do not guarantee that:</p>
+        <ul>
+            <li>All data will be extracted perfectly from every PDF</li>
+            <li>The converted Excel file will be 100% accurate</li>
+            <li>The Service will work with all bank statement formats</li>
+        </ul>
+        <p><strong>You are responsible for verifying the accuracy of converted data.</strong></p>
+
+        <h3>4.2 Availability</h3>
+        <p>We do not guarantee that:</p>
+        <ul>
+            <li>The Service will be available at all times</li>
+            <li>The Service will be uninterrupted or error-free</li>
+            <li>Defects will be corrected immediately</li>
+        </ul>
+
+        <h3>4.3 File Size and Format</h3>
+        <ul>
+            <li>Maximum file size: 16MB</li>
+            <li>Supported format: PDF only</li>
+            <li>Password-protected PDFs: Supported (password required)</li>
+        </ul>
+
+        <h2>5. Data Privacy and Security</h2>
+        
+        <h3>5.1 File Processing</h3>
+        <p>When you upload a file:</p>
+        <ul>
+            <li>It is temporarily stored on our server during conversion</li>
+            <li>It is automatically deleted after conversion is complete</li>
+            <li>We do not permanently store, archive, or share your files</li>
+        </ul>
+
+        <h3>5.2 Your Responsibility</h3>
+        <p>You acknowledge that:</p>
+        <ul>
+            <li>You are uploading sensitive financial information at your own risk</li>
+            <li>You should download and delete converted files promptly</li>
+            <li>You should not upload files containing highly sensitive information if you have security concerns</li>
+        </ul>
+
+        <p>For more details, please read our <a href="/privacy" style="color: var(--primary-color);">Privacy Policy</a>.</p>
+
+        <h2>6. Intellectual Property</h2>
+        
+        <h3>6.1 Our Rights</h3>
+        <p>All content, features, and functionality of the Service are owned by Ezy Statement Converter and are protected by copyright, trademark, and other intellectual property laws.</p>
+
+        <h3>6.2 Your Rights</h3>
+        <p>You retain all rights to the files you upload and the converted Excel files. We claim no ownership over your data.</p>
+
+        <h2>7. Disclaimer of Warranties</h2>
+        <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:</p>
+        <ul>
+            <li>Warranties of merchantability</li>
+            <li>Fitness for a particular purpose</li>
+            <li>Non-infringement</li>
+            <li>Accuracy or completeness of data</li>
+        </ul>
+
+        <h2>8. Limitation of Liability</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, EZY STATEMENT CONVERTER SHALL NOT BE LIABLE FOR:</p>
+        <ul>
+            <li>Any indirect, incidental, special, or consequential damages</li>
+            <li>Loss of profits, data, or business opportunities</li>
+            <li>Damages resulting from inaccurate conversions</li>
+            <li>Unauthorized access to or alteration of your files</li>
+            <li>Any other damages arising from use of the Service</li>
+        </ul>
+
+        <div class="important-notice">
+            <p><strong>Important:</strong> You use this Service at your own risk. Always verify converted data before using it for financial decisions.</p>
+        </div>
+
+        <h2>9. Indemnification</h2>
+        <p>You agree to indemnify and hold harmless Ezy Statement Converter from any claims, damages, losses, or expenses arising from:</p>
+        <ul>
+            <li>Your use of the Service</li>
+            <li>Your violation of these Terms</li>
+            <li>Your violation of any third-party rights</li>
+            <li>Any files you upload to the Service</li>
+        </ul>
+
+        <h2>10. Free Service</h2>
+        <p>The Service is currently provided free of charge. We reserve the right to:</p>
+        <ul>
+            <li>Introduce paid features in the future</li>
+            <li>Limit usage for free users</li>
+            <li>Discontinue the free service with reasonable notice</li>
+        </ul>
+
+        <h2>11. Modifications to Service</h2>
+        <p>We reserve the right to:</p>
+        <ul>
+            <li>Modify or discontinue the Service at any time</li>
+            <li>Add or remove supported banks</li>
+            <li>Change features and functionality</li>
+            <li>Update these Terms and Conditions</li>
+        </ul>
+
+        <h2>12. Termination</h2>
+        <p>We may terminate or suspend your access to the Service immediately, without prior notice, if you:</p>
+        <ul>
+            <li>Violate these Terms and Conditions</li>
+            <li>Abuse or misuse the Service</li>
+            <li>Engage in fraudulent activity</li>
+        </ul>
+
+        <h2>13. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.</p>
+
+        <h2>14. Dispute Resolution</h2>
+        <p>Any disputes arising from these Terms or use of the Service shall be resolved through:</p>
+        <ul>
+            <li>Good faith negotiations</li>
+            <li>Mediation if negotiations fail</li>
+            <li>Arbitration in accordance with Indian law</li>
+        </ul>
+
+        <h2>15. Severability</h2>
+        <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
+
+        <h2>16. Entire Agreement</h2>
+        <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Ezy Statement Converter regarding the Service.</p>
+
+        <h2>17. Contact Information</h2>
+        <p>If you have any questions about these Terms and Conditions, please contact us:</p>
+        <ul>
+            <li><strong>Email:</strong> support@ezystatementconverter.com</li>
+            <li><strong>Contact Page:</strong> <a href="/contact" style="color: var(--primary-color);">Contact Us</a></li>
+        </ul>
+
+        <h2>18. Acknowledgment</h2>
+        <p>By using Ezy Statement Converter, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</p>
+    </div>
+</div>
+{% endblock %}

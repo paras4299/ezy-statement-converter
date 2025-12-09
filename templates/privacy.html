@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}Privacy Policy - Ezy Statement Converter{% endblock %}
+
+{% block extra_css %}
+<style>
+    .privacy-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+    }
+
+    .privacy-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .privacy-header h1 {
+        font-size: 2.5rem;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+
+    .privacy-header p {
+        color: var(--text-light);
+        font-size: 1rem;
+    }
+
+    .privacy-content {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: var(--shadow);
+    }
+
+    .privacy-content h2 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .privacy-content h2:first-child {
+        margin-top: 0;
+    }
+
+    .privacy-content h3 {
+        color: var(--text-dark);
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .privacy-content p {
+        color: var(--text-light);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+    }
+
+    .privacy-content ul {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .privacy-content li {
+        color: var(--text-light);
+        line-height: 1.8;
+        margin-bottom: 0.5rem;
+    }
+
+    .privacy-content strong {
+        color: var(--text-dark);
+    }
+
+    .last-updated {
+        background: var(--bg-light);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: var(--text-light);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="privacy-container">
+    <div class="privacy-header">
+        <h1>Privacy Policy</h1>
+        <p>Your privacy is important to us</p>
+    </div>
+
+    <div class="privacy-content">
+        <div class="last-updated">
+            <strong>Last Updated:</strong> December 9, 2024
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>Welcome to Ezy Statement Converter ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our bank statement conversion service.</p>
+
+        <h2>2. Information We Collect</h2>
+        
+        <h3>2.1 Files You Upload</h3>
+        <p>When you use our service, you upload PDF bank statements for conversion. These files are:</p>
+        <ul>
+            <li>Temporarily stored on our server during the conversion process</li>
+            <li>Automatically deleted immediately after conversion is complete</li>
+            <li>Never permanently stored or archived</li>
+            <li>Not shared with any third parties</li>
+        </ul>
+
+        <h3>2.2 Technical Information</h3>
+        <p>We may collect basic technical information including:</p>
+        <ul>
+            <li>IP address</li>
+            <li>Browser type and version</li>
+            <li>Device information</li>
+            <li>Access times and dates</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use the information we collect solely for:</p>
+        <ul>
+            <li>Processing your PDF to Excel conversions</li>
+            <li>Improving our service quality</li>
+            <li>Troubleshooting technical issues</li>
+            <li>Analyzing usage patterns to enhance user experience</li>
+        </ul>
+
+        <h2>4. Data Security</h2>
+        <p>We take data security seriously and implement industry-standard measures:</p>
+        <ul>
+            <li><strong>Encryption:</strong> All data transmission is encrypted using HTTPS/SSL</li>
+            <li><strong>Temporary Storage:</strong> Files are stored only during active conversion</li>
+            <li><strong>Automatic Deletion:</strong> All uploaded files and converted files are automatically deleted after download or within 1 hour</li>
+            <li><strong>No Database Storage:</strong> We do not store your bank statements in any database</li>
+            <li><strong>Secure Servers:</strong> Our servers are protected with firewalls and security protocols</li>
+        </ul>
+
+        <h2>5. Data Retention</h2>
+        <p>We follow a strict data retention policy:</p>
+        <ul>
+            <li>Uploaded PDF files: Deleted immediately after conversion</li>
+            <li>Converted Excel files: Deleted after download or within 1 hour</li>
+            <li>Technical logs: Retained for up to 30 days for troubleshooting purposes</li>
+        </ul>
+
+        <h2>6. Third-Party Services</h2>
+        <p>We do not share your data with third parties. However, our service may use:</p>
+        <ul>
+            <li>Cloud hosting providers for server infrastructure</li>
+            <li>Analytics tools for understanding usage patterns (anonymized data only)</li>
+        </ul>
+
+        <h2>7. Cookies</h2>
+        <p>We use minimal cookies for:</p>
+        <ul>
+            <li>Session management</li>
+            <li>Remembering your preferences</li>
+            <li>Basic analytics</li>
+        </ul>
+        <p>You can disable cookies in your browser settings, though this may affect functionality.</p>
+
+        <h2>8. Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+            <li>Access any personal data we hold about you</li>
+            <li>Request deletion of your data</li>
+            <li>Opt-out of analytics tracking</li>
+            <li>Request information about how your data is processed</li>
+        </ul>
+
+        <h2>9. Children's Privacy</h2>
+        <p>Our service is not intended for users under 18 years of age. We do not knowingly collect personal information from children.</p>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify users of any material changes by updating the "Last Updated" date at the top of this policy.</p>
+
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
+        <ul>
+            <li><strong>Email:</strong> privacy@ezystatementconverter.com</li>
+            <li><strong>Contact Page:</strong> <a href="/contact" style="color: var(--primary-color);">Contact Us</a></li>
+        </ul>
+
+        <h2>12. Consent</h2>
+        <p>By using Ezy Statement Converter, you consent to this Privacy Policy and agree to its terms.</p>
+    </div>
+</div>
+{% endblock %}

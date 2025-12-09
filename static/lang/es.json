@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "convertNow": "Convertir Ahora"
+  },
+  "hero": {
+    "title": "Convertir Extracto Bancario",
+    "titleHighlight": "PDF a Excel",
+    "subtitle": "Convertidor Gratuito de Extractos Bancarios en Línea - Transforme extractos PDF en hojas de cálculo Excel al instante. Seguro, Rápido y Preciso.",
+    "badge1": "100% Seguro",
+    "badge2": "Conversión Instantánea",
+    "badge3": "Sin Registro",
+    "badge4": "Gratis Para Siempre"
+  },
+  "form": {
+    "selectBank": "Seleccione su Banco",
+    "searchBank": "Buscar banco...",
+    "chooseBank": "Elija un banco...",
+    "uploadPDF": "Subir Extracto PDF",
+    "dragDrop": "Arrastre y suelte su PDF aquí",
+    "orClick": "o haga clic para explorar (Máx 16MB)",
+    "password": "Contraseña PDF (Opcional)",
+    "passwordPlaceholder": "Dejar vacío si no está protegido con contraseña",
+    "convertButton": "Convertir a Excel",
+    "converting": "Convirtiendo su extracto...",
+    "successMessage": "¡Conversión exitosa!",
+    "downloadButton": "Descargar Archivo Excel"
+  },
+  "features": {
+    "title": "¿Por Qué Elegir Ezy Convertidor de Extractos?",
+    "feature1Title": "Conversión Ultrarrápida",
+    "feature1Desc": "Convierta extractos bancarios a Excel en segundos. Sin esperas, sin retrasos - resultados instantáneos cada vez",
+    "feature2Title": "Seguridad de Nivel Bancario",
+    "feature2Desc": "Cargas cifradas SSL. Archivos eliminados automáticamente después de la conversión. Sus datos financieros permanecen privados",
+    "feature3Title": "Datos 100% Precisos",
+    "feature3Desc": "Tecnología avanzada de OCR y análisis extrae cada transacción con precisión",
+    "feature4Title": "Cualquier Dispositivo, En Cualquier Lugar",
+    "feature4Desc": "Funciona en escritorio, tableta y móvil. Convierta extractos sobre la marcha",
+    "feature5Title": "Formato Listo para Excel",
+    "feature5Desc": "Obtenga archivos Excel perfectamente formateados con fechas, montos y descripciones organizadas",
+    "feature6Title": "Conversiones Ilimitadas",
+    "feature6Desc": "Sin límites, sin suscripciones. Convierta tantos extractos como necesite, completamente gratis"
+  },
+  "howItWorks": {
+    "title": "Convierta Extracto Bancario PDF a Excel en 3 Simples Pasos",
+    "step1Title": "Seleccione su Banco",
+    "step1Desc": "Elija entre HDFC, SBI, Axis, ICICI, Kotak, PNB, Union Bank y más",
+    "step2Title": "Suba Extracto PDF",
+    "step2Desc": "Arrastre y suelte su extracto bancario PDF o haga clic para explorar. Admite archivos protegidos con contraseña",
+    "step3Title": "Descargue Archivo Excel",
+    "step3Desc": "Obtenga su hoja de cálculo Excel organizada con todas las transacciones, fechas y montos"
+  },
+  "banks": {
+    "title": "Bancos Compatibles",
+    "hdfc": "Banco HDFC",
+    "sbi": "Banco Estatal de India",
+    "axis": "Banco Axis",
+    "icici": "Banco ICICI",
+    "kotak": "Banco Kotak Mahindra",
+    "pnb": "Banco Nacional de Punjab",
+    "union": "Banco Unión de India"
+  },
+  "footer": {
+    "description": "Convierta sus extractos bancarios PDF a formato Excel al instante. Gratis, seguro y fácil de usar.",
+    "supportedBanks": "Bancos Compatibles",
+    "quickLinks": "Enlaces Rápidos",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos y Condiciones",
+    "security": "Seguridad",
+    "copyright": "2025 Ezy Convertidor de Extractos. Todos los derechos reservados."
+  }
+}

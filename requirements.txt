@@ -1,0 +1,25 @@
+# Flask Web Framework
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# Data Processing
+pandas==2.1.4
+numpy>=1.21.2,<2.0.0
+
+# PDF Processing
+pdfplumber==0.11.8
+camelot-py==0.11.0
+PyPDF2==3.0.1
+
+# Image Processing (required by camelot)
+opencv-python>=4.5.0,<4.10.0
+Pillow==10.1.0
+
+# Excel Writing
+xlsxwriter==3.2.9
+openpyxl==3.1.2
+
+# Additional Dependencies
+ghostscript==0.8.1
+pyarrow>=10.0.0,<15.0.0
+python-dateutil==2.8.2

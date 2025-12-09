@@ -1,0 +1,1393 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        padding: 3rem 2rem 5rem;
+        position: relative;
+        overflow: visible;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        animation: fadeInDown 0.8s ease-out;
+        line-height: 1.2;
+    }
+
+    .hero h1 .highlight {
+        color: #FCD34D;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 3rem;
+        opacity: 0.95;
+        animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero-badges {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .hero-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.95rem;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0.6rem 1.2rem;
+        border-radius: 2rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .hero-badge:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+    }
+
+    .hero-badge i {
+        font-size: 1.3rem;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Hero Upload Box */
+    .hero-upload-box {
+        background: #fff;
+        border-radius: 1.5rem;
+        padding: 2.5rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .upload-steps {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 2rem;
+        gap: 1rem;
+    }
+
+    .upload-step {
+        flex: 1;
+        text-align: center;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        background: var(--primary-color);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0.5rem;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    .upload-step p {
+        color: var(--text-dark);
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    /* Features Section */
+    .features {
+        padding: 4rem 2rem;
+        background: var(--bg-light);
+    }
+
+    .features h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: var(--text-dark);
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .feature-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .feature-card i {
+        font-size: 3rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover i {
+        transform: scale(1.1);
+    }
+
+    .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+    }
+
+    .feature-card p {
+        color: var(--text-light);
+    }
+
+    /* Converter Section - Hidden, now in hero */
+    .converter-section {
+        display: none;
+    }
+
+    .converter-card {
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        font-size: 1rem;
+    }
+
+    .form-group select {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid var(--border-color);
+        border-radius: 0.75rem;
+        font-size: 1rem;
+        transition: all 0.3s;
+        background: #fff;
+        cursor: pointer;
+    }
+
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+
+    .form-group select:hover {
+        border-color: var(--primary-color);
+    }
+
+    /* Custom Searchable Dropdown */
+    .custom-select-wrapper {
+        position: relative;
+    }
+
+    #bankSearch {
+        width: 100%;
+        padding: 1rem;
+        padding-right: 2.5rem;
+        border: 2px solid var(--border-color);
+        border-radius: 0.75rem;
+        font-size: 1rem;
+        transition: all 0.3s;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E") no-repeat right 1rem center;
+        cursor: pointer;
+    }
+
+    #bankSearch:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .bank-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border: 2px solid var(--primary-color);
+        border-top: none;
+        border-radius: 0 0 0.75rem 0.75rem;
+        max-height: 250px;
+        overflow-y: auto;
+        display: none;
+        z-index: 100;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: -2px;
+    }
+
+    .bank-dropdown.active {
+        display: block;
+    }
+
+    .bank-option {
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-dark);
+        font-size: 1rem;
+    }
+
+    .bank-option:last-child {
+        border-bottom: none;
+    }
+
+    .bank-option:hover {
+        background: rgba(102, 126, 234, 0.1);
+        color: var(--text-dark);
+    }
+
+    .bank-option.selected {
+        background: var(--primary-color);
+        color: #fff !important;
+    }
+
+    .bank-option.hidden {
+        display: none;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="password"] {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid var(--border-color);
+        border-radius: 0.75rem;
+        font-size: 1rem;
+        transition: all 0.3s;
+        background: #fff;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="password"]:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+
+    .password-input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .password-input-wrapper input {
+        padding-right: 3.5rem;
+    }
+
+    .toggle-password {
+        position: absolute;
+        right: 0.75rem;
+        background: none;
+        border: none;
+        color: var(--text-light);
+        cursor: pointer;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .toggle-password:hover {
+        color: var(--primary-color);
+    }
+
+    .password-hint {
+        display: block;
+        margin-top: 0.75rem;
+        padding: 0.75rem;
+        background: #F3F4F6;
+        border-radius: 0.5rem;
+        color: var(--text-light);
+        font-size: 0.875rem;
+        line-height: 1.6;
+        border-left: 3px solid var(--primary-color);
+    }
+
+    .password-hint i {
+        color: var(--primary-color);
+        margin-right: 0.25rem;
+    }
+
+    .password-hint.highlight {
+        background: #EEF2FF;
+        color: var(--primary-color);
+        font-weight: 500;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.8;
+        }
+    }
+
+    .form-group label i {
+        margin-right: 0.5rem;
+        color: var(--primary-color);
+    }
+
+    .file-upload-wrapper {
+        position: relative;
+        border: 3px dashed var(--border-color);
+        border-radius: 1rem;
+        padding: 3rem 2rem;
+        text-align: center;
+        transition: all 0.3s;
+        cursor: pointer;
+        background: linear-gradient(to bottom, #FAFAFA, #fff);
+    }
+
+    .file-upload-wrapper:hover {
+        border-color: var(--primary-color);
+        background: linear-gradient(to bottom, #EEF2FF, #F9FAFB);
+        transform: translateY(-2px);
+    }
+
+    .file-upload-wrapper.dragover {
+        border-color: var(--primary-color);
+        background: #EEF2FF;
+        border-style: solid;
+        box-shadow: 0 0 20px rgba(79, 70, 229, 0.2);
+    }
+
+    .file-upload-wrapper i {
+        font-size: 4rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .file-upload-wrapper .upload-text {
+        color: var(--text-dark);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .file-upload-wrapper .upload-subtext {
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+
+    .file-upload-wrapper input[type="file"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .file-name {
+        margin-top: 1rem;
+        padding: 0.75rem;
+        background: #F0FDF4;
+        border: 1px solid #86EFAC;
+        border-radius: 0.5rem;
+        color: #166534;
+        font-size: 0.9rem;
+        font-weight: 500;
+        display: none;
+    }
+
+    .file-name.active {
+        display: block;
+    }
+
+    .file-name i {
+        color: #16A34A;
+        margin-right: 0.5rem;
+    }
+
+    .btn-convert {
+        width: 100%;
+        padding: 1.25rem;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        color: #fff;
+        border: none;
+        border-radius: 0.75rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-convert:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    }
+
+    .btn-convert:active {
+        transform: translateY(0);
+    }
+
+    .btn-convert:disabled {
+        background: var(--text-light);
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .loading {
+        display: none;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .loading.active {
+        display: block;
+    }
+
+    .spinner {
+        border: 4px solid var(--border-color);
+        border-top: 4px solid var(--primary-color);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .alert {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        display: none;
+    }
+
+    .alert.active {
+        display: block;
+    }
+
+    .alert-success {
+        background: #D1FAE5;
+        color: #065F46;
+        border: 1px solid #10B981;
+    }
+
+    .alert-error {
+        background: #FEE2E2;
+        color: #991B1B;
+        border: 1px solid #EF4444;
+    }
+
+    .download-btn {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--success-color);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+        background: #059669;
+    }
+
+    /* Banks Section */
+    .banks-section {
+        padding: 4rem 2rem;
+        background: #fff;
+    }
+
+    .banks-section h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: var(--text-dark);
+    }
+
+    .banks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .bank-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        border: 2px solid var(--border-color);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .bank-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+    }
+
+    .bank-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .bank-card:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+    }
+
+    .bank-card i {
+        font-size: 3rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        display: inline-block;
+        transition: transform 0.3s;
+    }
+
+    .bank-card:hover i {
+        transform: scale(1.1) rotateY(360deg);
+    }
+
+    .bank-card h3 {
+        font-size: 1.2rem;
+        color: var(--text-dark);
+    }
+
+    /* SEO Content Section */
+    .seo-content {
+        padding: 4rem 2rem;
+        background: #fff;
+    }
+
+    .seo-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .seo-container h2 {
+        font-size: 2.5rem;
+        color: var(--text-dark);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .seo-text {
+        color: var(--text-light);
+        line-height: 1.8;
+    }
+
+    .seo-text h3 {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .seo-text p {
+        margin-bottom: 1.5rem;
+    }
+
+    .seo-text ul {
+        margin: 1rem 0 1.5rem 2rem;
+    }
+
+    .seo-text li {
+        margin-bottom: 0.75rem;
+    }
+
+    .seo-text strong {
+        color: var(--text-dark);
+        font-weight: 600;
+    }
+
+    /* Trust Badges */
+    .trust-badges {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .trust-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+
+    .trust-badge i {
+        color: var(--success-color);
+        font-size: 1.2rem;
+    }
+
+    /* How it Works Section */
+    .how-it-works {
+        padding: 4rem 2rem;
+        background: #fff;
+        text-align: center;
+    }
+
+    .how-it-works h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: var(--text-dark);
+    }
+
+    .steps-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    @media (max-width: 992px) {
+        .steps-container {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+        }
+    }
+
+    .step-box {
+        padding: 2.5rem 2rem;
+        background: #fff;
+        border-radius: 1.5rem;
+        position: relative;
+        border: 2px solid var(--border-color);
+        transition: all 0.3s ease;
+    }
+
+    .step-box:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+    }
+
+    .step-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 1.5rem 1.5rem 0 0;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .step-box:hover::before {
+        opacity: 1;
+    }
+
+    .step-box .step-number-badge {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: #fff;
+        box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
+        border: 3px solid #fff;
+        z-index: 2;
+        animation: pulse-badge 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-badge {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+    }
+
+    .step-box:hover .step-number-badge {
+        animation-play-state: paused;
+        transform: scale(1.1);
+    }
+
+    .icon-wrapper {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 1.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .icon-wrapper::before {
+        content: '';
+        position: absolute;
+        inset: -5px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        opacity: 0.3;
+        filter: blur(10px);
+        transition: all 0.3s;
+    }
+
+    .step-box:hover .icon-wrapper {
+        transform: scale(1.1);
+        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+    }
+
+    .step-box:hover .icon-wrapper::before {
+        opacity: 0.5;
+        filter: blur(15px);
+    }
+
+    .step-box i {
+        font-size: 3rem;
+        color: #fff;
+        display: inline-block;
+        transition: transform 0.3s;
+        z-index: 1;
+        position: relative;
+    }
+
+    .step-box:hover i {
+        transform: scale(1.1);
+    }
+
+    .step-box h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+    }
+
+    .step-box p {
+        color: var(--text-light);
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .hero-badges {
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge {
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .hero-badge i {
+            font-size: 1.1rem;
+        }
+
+        .hero-upload-box {
+            padding: 1.5rem;
+        }
+
+        .upload-steps {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .upload-step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .step-number {
+            margin: 0;
+        }
+
+        .file-upload-wrapper {
+            padding: 2rem 1rem;
+        }
+
+        .file-upload-wrapper i {
+            font-size: 3rem;
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+
+        .step-box i {
+            font-size: 2.5rem;
+        }
+
+        .step-number-badge {
+            width: 35px;
+            height: 35px;
+            font-size: 1.1rem;
+            top: -10px;
+            right: -10px;
+        }
+
+        .steps-container {
+            gap: 1.5rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section with Upload Box -->
+<section class="hero">
+    <div class="hero-content">
+        <h1><span data-i18n="hero.title">Convert Bank Statement</span> <span class="highlight" data-i18n="hero.titleHighlight">PDF to Excel</span></h1>
+        <p data-i18n="hero.subtitle">Free Online Bank Statement Converter - Transform PDF statements into Excel spreadsheets instantly. Secure, Fast & Accurate.</p>
+        
+        <div class="hero-badges">
+            <div class="hero-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span data-i18n="hero.badge1">100% Secure</span>
+            </div>
+            <div class="hero-badge">
+                <i class="fas fa-bolt"></i>
+                <span data-i18n="hero.badge2">Instant Conversion</span>
+            </div>
+            <div class="hero-badge">
+                <i class="fas fa-check-circle"></i>
+                <span data-i18n="hero.badge3">No Registration</span>
+            </div>
+            <div class="hero-badge">
+                <i class="fas fa-gift"></i>
+                <span data-i18n="hero.badge4">Free Forever</span>
+            </div>
+        </div>
+        
+        <!-- Upload Box in Hero -->
+        <div class="hero-upload-box" id="converter">
+            <div class="upload-steps">
+                <div class="upload-step">
+                    <div class="step-number">1</div>
+                    <p>Select Bank</p>
+                </div>
+                <div class="upload-step">
+                    <div class="step-number">2</div>
+                    <p>Upload PDF</p>
+                </div>
+                <div class="upload-step">
+                    <div class="step-number">3</div>
+                    <p>Download Excel</p>
+                </div>
+            </div>
+
+            <form id="converterForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="bank"><i class="fas fa-university"></i> <span data-i18n="form.selectBank">Select Your Bank</span></label>
+                    <div class="custom-select-wrapper">
+                        <input type="text" id="bankSearch" placeholder="Search bank..." autocomplete="off" data-i18n-placeholder="form.searchBank">
+                        <div class="bank-dropdown" id="bankDropdown">
+                            <div class="bank-option" data-value="" data-i18n="form.chooseBank">Choose a bank...</div>
+                            {% for key, value in banks.items() %}
+                            <div class="bank-option" data-value="{{ key }}">{{ value }}</div>
+                            {% endfor %}
+                        </div>
+                        <input type="hidden" id="bank" name="bank" required>
+                    </div>
+                </div>
+
+                <div class="form-group" id="passwordGroup">
+                    <label for="password"><i class="fas fa-lock"></i> <span data-i18n="form.password">PDF Password (Optional)</span></label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Leave empty if not password-protected" data-i18n-placeholder="form.passwordPlaceholder">
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <small class="password-hint" id="passwordHint">
+                        <i class="fas fa-info-circle"></i> <span id="hintText">If your PDF is password-protected, enter the password here.</span>
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-file-pdf"></i> <span data-i18n="form.uploadPDF">Upload PDF Statement</span></label>
+                    <div class="file-upload-wrapper" id="fileUploadWrapper">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <div class="upload-text" data-i18n="form.dragDrop">Drag & drop your PDF here</div>
+                        <div class="upload-subtext" data-i18n="form.orClick">or click to browse (Max 16MB)</div>
+                        <input type="file" id="file" name="file" accept=".pdf" required>
+                    </div>
+                    <div class="file-name" id="fileName"></div>
+                </div>
+
+                <button type="submit" class="btn-convert" id="convertBtn">
+                    <i class="fas fa-exchange-alt"></i> <span data-i18n="form.convertButton">Convert to Excel</span>
+                </button>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p data-i18n="form.converting">Converting your statement...</p>
+            </div>
+
+            <div class="alert alert-success" id="successAlert">
+                <i class="fas fa-check-circle"></i>
+                <span id="successMessage" data-i18n="form.successMessage">Conversion successful!</span>
+                <br>
+                <a href="#" class="download-btn" id="downloadBtn">
+                    <i class="fas fa-download"></i> <span data-i18n="form.downloadButton">Download Excel File</span>
+                </a>
+            </div>
+
+            <div class="alert alert-error" id="errorAlert">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="errorMessage"></span>
+            </div>
+
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>100% Secure</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-lock"></i>
+                    <span>Files Auto-Deleted</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-bolt"></i>
+                    <span>Lightning Fast</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <h2 data-i18n="features.title">Why Choose Ezy Statement Converter?</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <i class="fas fa-rocket"></i>
+            <h3 data-i18n="features.feature1Title">Lightning Fast Conversion</h3>
+            <p data-i18n="features.feature1Desc">Convert bank statements to Excel in seconds. No waiting, no delays - instant results every time</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-lock"></i>
+            <h3 data-i18n="features.feature2Title">Bank-Level Security</h3>
+            <p data-i18n="features.feature2Desc">SSL encrypted uploads. Files auto-deleted after conversion. Your financial data stays private</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-chart-line"></i>
+            <h3 data-i18n="features.feature3Title">100% Accurate Data</h3>
+            <p data-i18n="features.feature3Desc">Advanced OCR and parsing technology extracts every transaction with precision</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3 data-i18n="features.feature4Title">Any Device, Anywhere</h3>
+            <p data-i18n="features.feature4Desc">Works on desktop, tablet, and mobile. Convert statements on the go</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-file-excel"></i>
+            <h3 data-i18n="features.feature5Title">Excel Ready Format</h3>
+            <p data-i18n="features.feature5Desc">Get perfectly formatted Excel files with dates, amounts, and descriptions organized</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-infinity"></i>
+            <h3 data-i18n="features.feature6Title">Unlimited Conversions</h3>
+            <p data-i18n="features.feature6Desc">No limits, no subscriptions. Convert as many statements as you need, completely free</p>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works">
+    <h2 data-i18n="howItWorks.title">Convert Bank Statement PDF to Excel in 3 Simple Steps</h2>
+    <div class="steps-container">
+        <div class="step-box">
+            <div class="step-number-badge">1</div>
+            <div class="icon-wrapper">
+                <i class="fas fa-university"></i>
+            </div>
+            <h3 data-i18n="howItWorks.step1Title">Select Your Bank</h3>
+            <p data-i18n="howItWorks.step1Desc">Choose from HDFC, SBI, Axis, ICICI, Kotak, PNB, Union Bank and more</p>
+        </div>
+        <div class="step-box">
+            <div class="step-number-badge">2</div>
+            <div class="icon-wrapper">
+                <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <h3 data-i18n="howItWorks.step2Title">Upload PDF Statement</h3>
+            <p data-i18n="howItWorks.step2Desc">Drag & drop your bank statement PDF or click to browse. Supports password-protected files</p>
+        </div>
+        <div class="step-box">
+            <div class="step-number-badge">3</div>
+            <div class="icon-wrapper">
+                <i class="fas fa-file-download"></i>
+            </div>
+            <h3 data-i18n="howItWorks.step3Title">Download Excel File</h3>
+            <p data-i18n="howItWorks.step3Desc">Get your organized Excel spreadsheet with all transactions, dates, and amounts</p>
+        </div>
+    </div>
+</section>
+
+<!-- Supported Banks Section -->
+<section class="banks-section">
+    <h2 data-i18n="banks.title">Supported Banks</h2>
+    <div class="banks-grid">
+        <div class="bank-card">
+            <i class="fas fa-landmark"></i>
+            <h3 data-i18n="banks.hdfc">HDFC Bank</h3>
+        </div>
+        <div class="bank-card">
+            <i class="fas fa-piggy-bank"></i>
+            <h3 data-i18n="banks.sbi">State Bank of India</h3>
+        </div>
+        <div class="bank-card">
+            <i class="fas fa-university"></i>
+            <h3 data-i18n="banks.axis">Axis Bank</h3>
+        </div>
+        <div class="bank-card">
+            <i class="fas fa-building-columns"></i>
+            <h3 data-i18n="banks.icici">ICICI Bank</h3>
+        </div>
+        <div class="bank-card">
+            <i class="fas fa-coins"></i>
+            <h3 data-i18n="banks.kotak">Kotak Mahindra Bank</h3>
+        </div>
+        <div class="bank-card">
+            <i class="fas fa-money-check-alt"></i>
+            <h3 data-i18n="banks.pnb">Punjab National Bank</h3>
+        </div>
+        <div class="bank-card">
+            <i class="fas fa-hand-holding-usd"></i>
+            <h3 data-i18n="banks.union">Union Bank of India</h3>
+        </div>
+    </div>
+</section>
+
+<!-- SEO Content Section -->
+<section class="seo-content">
+    <div class="seo-container">
+        <h2>About Bank Statement PDF to Excel Converter</h2>
+        <div class="seo-text">
+            <p>
+                <strong>Ezy Statement Converter</strong> is a free online tool designed to help you convert bank statement PDFs to Excel format quickly and securely. Whether you're managing personal finances, preparing tax documents, or analyzing business transactions, our converter makes it easy to extract data from PDF bank statements and organize it in Excel spreadsheets.
+            </p>
+            <h3>Why Convert Bank Statements to Excel?</h3>
+            <p>
+                Converting bank statements from PDF to Excel format offers numerous benefits:
+            </p>
+            <ul>
+                <li><strong>Easy Analysis:</strong> Sort, filter, and analyze transactions in Excel</li>
+                <li><strong>Tax Preparation:</strong> Quickly categorize expenses for tax filing</li>
+                <li><strong>Budget Tracking:</strong> Import data into budgeting tools and apps</li>
+                <li><strong>Financial Planning:</strong> Create charts and reports from your transaction data</li>
+                <li><strong>Record Keeping:</strong> Maintain organized digital records of all transactions</li>
+            </ul>
+            <h3>Supported Indian Banks</h3>
+            <p>
+                Our converter supports all major Indian banks including HDFC Bank, State Bank of India (SBI), Axis Bank, ICICI Bank, Kotak Mahindra Bank, Punjab National Bank (PNB), and Union Bank of India. We continuously add support for more banks to serve you better.
+            </p>
+            <h3>100% Free & Secure</h3>
+            <p>
+                Unlike other converters, Ezy Statement Converter is completely free with no hidden charges, subscriptions, or conversion limits. Your financial data is processed securely with SSL encryption, and all files are automatically deleted after conversion to protect your privacy.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const form = document.getElementById('converterForm');
+    const fileInput = document.getElementById('file');
+    const fileUploadWrapper = document.getElementById('fileUploadWrapper');
+    const fileName = document.getElementById('fileName');
+    const convertBtn = document.getElementById('convertBtn');
+    const loading = document.getElementById('loading');
+    const successAlert = document.getElementById('successAlert');
+    const errorAlert = document.getElementById('errorAlert');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const bankSelect = document.getElementById('bank');
+    const bankSearch = document.getElementById('bankSearch');
+    const bankDropdown = document.getElementById('bankDropdown');
+    const passwordInput = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordHint = document.getElementById('passwordHint');
+    const hintText = document.getElementById('hintText');
+
+    // Searchable Bank Dropdown
+    let selectedBank = '';
+
+    bankSearch.addEventListener('click', function() {
+        bankDropdown.classList.toggle('active');
+    });
+
+    bankSearch.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const options = bankDropdown.querySelectorAll('.bank-option');
+        
+        bankDropdown.classList.add('active');
+        
+        options.forEach(option => {
+            const text = option.textContent.toLowerCase();
+            if (text.includes(searchTerm)) {
+                option.classList.remove('hidden');
+            } else {
+                option.classList.add('hidden');
+            }
+        });
+    });
+
+    bankDropdown.addEventListener('click', function(e) {
+        if (e.target.classList.contains('bank-option')) {
+            const value = e.target.getAttribute('data-value');
+            const text = e.target.textContent;
+            
+            selectedBank = value;
+            bankSelect.value = value;
+            bankSearch.value = text;
+            bankDropdown.classList.remove('active');
+            
+            // Remove selected class from all options
+            bankDropdown.querySelectorAll('.bank-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked option
+            e.target.classList.add('selected');
+            
+            // Trigger bank change event for password hints
+            updatePasswordHint(value);
+        }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.custom-select-wrapper')) {
+            bankDropdown.classList.remove('active');
+        }
+    });
+
+    function updatePasswordHint(bankValue) {
+        const hint = passwordHints[bankValue] || passwordHints['default'];
+        hintText.textContent = hint;
+        
+        // Highlight hint for banks that commonly use passwords
+        if (bankValue === 'pnb' || bankValue === 'sbi' || bankValue === 'union') {
+            passwordHint.classList.add('highlight');
+        } else {
+            passwordHint.classList.remove('highlight');
+        }
+    }
+
+    // Password hints for different banks
+    const passwordHints = {
+        'hdfc': 'HDFC statements are rarely password-protected. Leave empty unless you set a custom password.',
+        'sbi': 'SBI statements may be password-protected. Common passwords: Date of Birth (DDMMYYYY) or Account Number.',
+        'axis': 'Axis statements are rarely password-protected. Leave empty unless you set a custom password.',
+        'icici': 'ICICI statements are rarely password-protected. Leave empty unless you set a custom password.',
+        'kotak': 'Kotak statements are rarely password-protected. Leave empty unless you set a custom password.',
+        'pnb': 'PNB statements are often password-protected. Common passwords: Date of Birth (DDMMYYYY) or Account Number.',
+        'union': 'Union Bank statements may be password-protected. Common passwords: Date of Birth (DDMMYYYY) or Account Number.',
+        'default': 'If your PDF is password-protected, enter the password here. Common passwords: Date of Birth (DDMMYYYY) or Account Number.'
+    };
+
+    // Password hints are now handled by updatePasswordHint function above
+
+    // Toggle password visibility
+    togglePassword.addEventListener('click', function() {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        
+        // Toggle icon
+        const icon = this.querySelector('i');
+        if (type === 'password') {
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        } else {
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        }
+    });
+
+    // File upload handling
+    fileInput.addEventListener('change', function() {
+        if (this.files.length > 0) {
+            fileName.innerHTML = `<i class="fas fa-check-circle"></i> ${this.files[0].name}`;
+            fileName.classList.add('active');
+        } else {
+            fileName.classList.remove('active');
+        }
+    });
+
+    // Drag and drop
+    fileUploadWrapper.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        this.classList.add('dragover');
+    });
+
+    fileUploadWrapper.addEventListener('dragleave', function() {
+        this.classList.remove('dragover');
+    });
+
+    fileUploadWrapper.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('dragover');
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            fileName.innerHTML = `<i class="fas fa-check-circle"></i> ${files[0].name}`;
+            fileName.classList.add('active');
+        }
+    });
+
+    // Form submission
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Hide alerts
+        successAlert.classList.remove('active');
+        errorAlert.classList.remove('active');
+
+        // Show loading
+        loading.classList.add('active');
+        convertBtn.disabled = true;
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch('/convert', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            loading.classList.remove('active');
+            convertBtn.disabled = false;
+
+            if (response.ok && data.success) {
+                document.getElementById('successMessage').textContent = data.message;
+                downloadBtn.href = data.download_url;
+                successAlert.classList.add('active');
+                form.reset();
+                fileName.classList.remove('active');
+                fileName.innerHTML = '';
+            } else {
+                document.getElementById('errorMessage').textContent = data.error || 'Conversion failed';
+                errorAlert.classList.add('active');
+            }
+        } catch (error) {
+            loading.classList.remove('active');
+            convertBtn.disabled = false;
+            document.getElementById('errorMessage').textContent = 'An error occurred. Please try again.';
+            errorAlert.classList.add('active');
+        }
+    });
+</script>
+{% endblock %}

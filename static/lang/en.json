@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "convertNow": "Convert Now"
+  },
+  "hero": {
+    "title": "Convert Bank Statement",
+    "titleHighlight": "PDF to Excel",
+    "subtitle": "Free Online Bank Statement Converter - Transform PDF statements into Excel spreadsheets instantly. Secure, Fast & Accurate.",
+    "badge1": "100% Secure",
+    "badge2": "Instant Conversion",
+    "badge3": "No Registration",
+    "badge4": "Free Forever"
+  },
+  "form": {
+    "selectBank": "Select Your Bank",
+    "searchBank": "Search bank...",
+    "chooseBank": "Choose a bank...",
+    "uploadPDF": "Upload PDF Statement",
+    "dragDrop": "Drag & drop your PDF here",
+    "orClick": "or click to browse (Max 16MB)",
+    "password": "PDF Password (Optional)",
+    "passwordPlaceholder": "Leave empty if not password-protected",
+    "convertButton": "Convert to Excel",
+    "converting": "Converting your statement...",
+    "successMessage": "Conversion successful!",
+    "downloadButton": "Download Excel File"
+  },
+  "features": {
+    "title": "Why Choose Ezy Statement Converter?",
+    "feature1Title": "Lightning Fast Conversion",
+    "feature1Desc": "Convert bank statements to Excel in seconds. No waiting, no delays - instant results every time",
+    "feature2Title": "Bank-Level Security",
+    "feature2Desc": "SSL encrypted uploads. Files auto-deleted after conversion. Your financial data stays private",
+    "feature3Title": "100% Accurate Data",
+    "feature3Desc": "Advanced OCR and parsing technology extracts every transaction with precision",
+    "feature4Title": "Any Device, Anywhere",
+    "feature4Desc": "Works on desktop, tablet, and mobile. Convert statements on the go",
+    "feature5Title": "Excel Ready Format",
+    "feature5Desc": "Get perfectly formatted Excel files with dates, amounts, and descriptions organized",
+    "feature6Title": "Unlimited Conversions",
+    "feature6Desc": "No limits, no subscriptions. Convert as many statements as you need, completely free"
+  },
+  "howItWorks": {
+    "title": "Convert Bank Statement PDF to Excel in 3 Simple Steps",
+    "step1Title": "Select Your Bank",
+    "step1Desc": "Choose from HDFC, SBI, Axis, ICICI, Kotak, PNB, Union Bank and more",
+    "step2Title": "Upload PDF Statement",
+    "step2Desc": "Drag & drop your bank statement PDF or click to browse. Supports password-protected files",
+    "step3Title": "Download Excel File",
+    "step3Desc": "Get your organized Excel spreadsheet with all transactions, dates, and amounts"
+  },
+  "banks": {
+    "title": "Supported Banks",
+    "hdfc": "HDFC Bank",
+    "sbi": "State Bank of India",
+    "axis": "Axis Bank",
+    "icici": "ICICI Bank",
+    "kotak": "Kotak Mahindra Bank",
+    "pnb": "Punjab National Bank",
+    "union": "Union Bank of India"
+  },
+  "seo": {
+    "title": "About Bank Statement PDF to Excel Converter",
+    "intro": "Ezy Statement Converter is a free online tool designed to help you convert bank statement PDFs to Excel format quickly and securely. Whether you're managing personal finances, preparing tax documents, or analyzing business transactions, our converter makes it easy to extract data from PDF bank statements and organize it in Excel spreadsheets.",
+    "whyTitle": "Why Convert Bank Statements to Excel?",
+    "whyIntro": "Converting bank statements from PDF to Excel format offers numerous benefits:",
+    "benefit1": "Easy Analysis: Sort, filter, and analyze transactions in Excel",
+    "benefit2": "Tax Preparation: Quickly categorize expenses for tax filing",
+    "benefit3": "Budget Tracking: Import data into budgeting tools and apps",
+    "benefit4": "Financial Planning: Create charts and reports from your transaction data",
+    "benefit5": "Record Keeping: Maintain organized digital records of all transactions",
+    "supportedTitle": "Supported Indian Banks",
+    "supportedDesc": "Our converter supports all major Indian banks including HDFC Bank, State Bank of India (SBI), Axis Bank, ICICI Bank, Kotak Mahindra Bank, Punjab National Bank (PNB), and Union Bank of India. We continuously add support for more banks to serve you better.",
+    "securityTitle": "100% Free & Secure",
+    "securityDesc": "Unlike other converters, Ezy Statement Converter is completely free with no hidden charges, subscriptions, or conversion limits. Your financial data is processed securely with SSL encryption, and all files are automatically deleted after conversion to protect your privacy."
+  },
+  "footer": {
+    "description": "Convert your bank statement PDFs to Excel format instantly. Free, secure, and easy to use.",
+    "supportedBanks": "Supported Banks",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "security": "Security",
+    "copyright": "2025 Ezy Statement Converter. All rights reserved."
+  },
+  "about": {
+    "title": "About Ezy Statement Converter",
+    "subtitle": "Making financial data management easier for everyone"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us"
+  }
+}
